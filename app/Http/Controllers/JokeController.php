@@ -18,7 +18,7 @@ class JokeController extends Controller
 
         $todo = Joke::insert([
             'text' => $data['text'],
-            'theme' => $data['theme'],
+            'theme_id' => $data['theme_id'],
             'audio' => $data['audio'],
         ]);
 
@@ -37,7 +37,7 @@ class JokeController extends Controller
 
     public function showTheme($id)
     {
-        $joke = Joke::where('theme', $id)->get();
+        $joke = Joke::where('theme_id', $id)->get();
 
         if (!$joke) {
             return response()->json(['message' => 'Not found'], 404);
@@ -48,7 +48,7 @@ class JokeController extends Controller
 
     public function joke($id)
     {
-        $joke = Joke::where('theme', $id)->get()->random(10);
+        $joke = Joke::where('theme_id', $id)->get()->random(10);
 
         if (!$joke) {
             return response()->json(['message' => 'Not found'], 404);
