@@ -16,7 +16,7 @@ class CreateJokesTable extends Migration
         Schema::create('jokes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('text');
+            $table->longText('text');
             $table->string('audio');
             $table->integer('theme_id');
         });
