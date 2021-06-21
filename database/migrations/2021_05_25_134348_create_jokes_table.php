@@ -18,7 +18,7 @@ class CreateJokesTable extends Migration
             $table->timestamps();
             $table->string('text');
             $table->string('audio');
-            $table->foreignId('themes')
+            $table->foreignId('themes_id')
                 ->constrained()
                 ->onDelete('cascade');
         });
