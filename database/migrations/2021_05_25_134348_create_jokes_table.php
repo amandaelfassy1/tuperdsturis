@@ -18,7 +18,7 @@ class CreateJokesTable extends Migration
             $table->timestamps();
             $table->string('text');
             $table->string('audio');
-            $table->int('theme_id');
+            $table->integer('theme_id');
         });
     }
 
